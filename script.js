@@ -7,8 +7,8 @@ const octokit = new Octokit({
 async function getCommits(repo) {
   try {
     const { data } = await octokit.repos.listCommits({
-      owner: 'username',
-      repo: repo
+      owner: 'KillerObee',
+      repo: hwygowerhsdf
     });
     console.log(data);
   } catch (error) {
