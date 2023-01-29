@@ -1,15 +1,19 @@
-fetch(`https://api.github.com/repos/${KillerObee}/${hwygowerhsdf}/commits`)
-  .then(response => response.json())
-  .then(data => {
-    // Get the ul element
-    const changelog = document.getElementById("changelog");
+import { Octokit } from "octokit";
 
-    // Iterate through the commit data
-    data.forEach(commit => {
-      // Create a new li element
-      const li = document.createElement("li");
-      li.innerHTML = `${commit.commit.committer.date} - ${commit.commit.message}`;
-      changelog.appendChild(li);
+const octokit = new Octokit({
+  auth: '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'
+});
+
+async function getCommits(repo) {
+  try {
+    const { data } = await octokit.repos.listCommits({
+      owner: 'username',
+      repo: repo
     });
-  })
-  .catch(error => console.log(error));
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+getCommits('repo');
