@@ -1,12 +1,20 @@
 .profile_img{
     max-width: 50px;
+    height: auto;
     border-radius: 50%;
 }
 
 .banner{
     max-width: 500px;
+    height: auto;
 }
 
 .card_image{
     max-width: 500px;
+    height: auto;
+}
+
+#arrow_top{
+    max-width: 20px;
+    height: auto;
 }
